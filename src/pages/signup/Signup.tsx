@@ -8,7 +8,7 @@ const Signup = () => {
     <div className="container">
       <div className="signup-form">
         {" "}
-        <h1>Log in</h1>
+        <h1>Sign Up</h1>
         <div className="form-group">
           <label htmlFor="name">
             <Person />
@@ -33,7 +33,7 @@ const Signup = () => {
           </label>
           <input type="password" placeholder="Confirm Password" />
         </div>
-        <button className="btn btn-success">Log in</button>
+        <button className="btn btn-success">Sign Up</button>
       </div>
       <div>
         <img src={signupImage} alt="signup" />

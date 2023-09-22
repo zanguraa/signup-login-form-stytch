@@ -1,8 +1,44 @@
 label {
-  transform: translate(25px, -2px);
+  transform: translate(25px, -5px);
+}
+
+input:focus {
+  outline: none;
 }
 
 .form-group {
   display: flex;
   align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 100px;
+    margin-left: 100px;
+    min-width: 400px;
+  }
 }
