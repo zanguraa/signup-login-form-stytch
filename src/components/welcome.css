@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.welcome-btn {
+  margin: 0;
+}

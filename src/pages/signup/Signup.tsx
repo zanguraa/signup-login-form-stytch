@@ -38,6 +38,11 @@ const Signup = () => {
       <div>
         <img src={signupImage} alt="signup" />
       </div>
+      <div>
+        <p className="text-center mt-2">
+          Already have an account? <a href="/login">Log in</a>
+        </p>
+      </div>
     </div>
   );
 };

@@ -14,9 +14,11 @@ input:focus {
 .container {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .btn {
+  margin-left: 20px;
   margin-top: 20px;
 }
 
@@ -25,6 +27,8 @@ input:focus {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  min-height: 250px;
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -40,5 +44,6 @@ input:focus {
     margin-right: 100px;
     margin-left: 100px;
     min-width: 400px;
+    align-items: flex-start;
   }
 }
