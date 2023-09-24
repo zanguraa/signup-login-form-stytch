@@ -33,7 +33,7 @@ const Login = () => {
       <div>
         <img src={signinImage} alt="signup" />
       </div>
-      <div>
+      <div className="sign-in">
         <p className="text-center mt-2">
           Don't have an account? <Link to="/signup">Sign up</Link>
         </p>

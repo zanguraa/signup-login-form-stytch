@@ -4,15 +4,12 @@ import "./welcome.css";
 
 const WelcomePage = () => {
   return (
-    <div className="container">
+    <div className="container container-welcome">
       <h1>Welcome </h1>
       <p className="fw-light">
-        You are viewing test page.
-        <br />
-        The main purpose of this site is to connect the user to the main page,
-        which is visible only after authentication.
-        <br />
-        Authentication is done through "Scatch".
+        You are viewing test page. The main purpose of this site is to connect
+        the user to the main page, which is visible only after authentication.
+        Authentication is done through <b>"Scatch"</b>.
       </p>
       <div className="welcome-form">
         <Link to="/signup">

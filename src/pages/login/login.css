@@ -8,6 +8,6 @@
 .container-login {
   display: flex;
   justify-content: space-between;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 50px!important;
+  padding-right: 50px!important;
 }
