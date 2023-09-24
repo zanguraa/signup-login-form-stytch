@@ -10,6 +10,7 @@ interface SignupProps {
   setName: React.Dispatch<React.SetStateAction<string>>;
 }
 
+
 const Signup = ({ name, setName }: SignupProps) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");

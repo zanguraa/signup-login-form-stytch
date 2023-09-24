@@ -8,13 +8,17 @@ import RessetPassword from "./pages/resset/RessetPassword";
 import { StytchHeadlessClient } from "@stytch/vanilla-js/headless";
 import { StytchProvider } from "@stytch/react";
 import Congrats from "./pages/congrats/Congrats";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const [name, setName] = useState<string>("");
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false); // Add isAuthenticated state variable and setIsAuthenticated function to App component
 
   const stytchClient = new StytchHeadlessClient(
     "public-token-test-f809fbac-4fe1-41b0-9cc9-15fb0b808ddb"
   );
+
+  console.log("auth is?", isAuthenticated);
 
   return (
     <div className="App bg-body-tertiary">
@@ -26,9 +30,19 @@ function App() {
               path="/signup"
               element={<Signup name={name} setName={setName} />}
             />
-            <Route path="/login" element={<Login />} />
+            <Route
+              path="/login"
+              element={<Login setIsAuthenticated={setIsAuthenticated} />}
+            />
             <Route path="/resset/*" element={<RessetPassword />} />
-            <Route path="/congrats" element={<Congrats name={name} />} />
+            <Route
+              path="/congrats"
+              element={
+                <PrivateRoute isAuthenticated={isAuthenticated}>
+                  <Congrats name={name} />
+                </PrivateRoute>
+              }
+            />
           </Routes>
         </StytchProvider>
       </Router>

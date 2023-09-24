@@ -1,11 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 // import "../signup/signup.css";
 import "./login.css";
 import signinImage from "../../assets/images/signin.jpg";
 import { Email, Lock } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { useStytch } from "@stytch/react";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+interface LoginProps {
+  setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Login = ({ setIsAuthenticated }: LoginProps) => {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const stytchClient = useStytch();
+  const navigate = useNavigate();
+
+  const login = () => {
+    stytchClient.passwords
+      .authenticate({
+        email,
+        password,
+        session_duration_minutes: 60,
+      })
+      .then((res) => {
+        console.log("Success:", res);
+        setIsAuthenticated(true);
+        navigate("/congrats");
+      })
+      .catch((err) => {
+        console.log("Error:", err);
+      });
+    console.log("login");
+  };
+
   return (
     <div className="container container-login">
       <div className="signup-form-login">
@@ -13,13 +43,27 @@ const Login = () => {
           <label htmlFor="email">
             <Email />
           </label>
-          <input id="email" type="email" placeholder="Your Email" />
+          <input
+            id="email"
+            type="email"
+            placeholder="Your Email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
         </div>
         <div className="form-group">
           <label htmlFor="password">
             <Lock />
           </label>
-          <input type="password" id="password" placeholder="Your Password" />
+          <input
+            type="password"
+            id="password"
+            placeholder="Your Password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
         </div>
         <div
           style={{ width: "150px", marginLeft: "-150px" }}
@@ -28,7 +72,9 @@ const Login = () => {
           <label htmlFor="checkbox">Remember me</label>
           <input style={{ width: "20px" }} id="checkbox" type="checkbox" />
         </div>
-        <button className="btn btn-success">Log in</button>
+        <button className="btn btn-success" onClick={login}>
+          Log in
+        </button>
         <Link to="/resset">
           <p className="text-center mt-2">Forgot Password?</p>
         </Link>
