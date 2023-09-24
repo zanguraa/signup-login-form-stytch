@@ -38,7 +38,7 @@ const Signup = () => {
       <div>
         <img src={signupImage} alt="signup" />
       </div>
-      <div>
+      <div className="sign-in">
         <p className="text-center mt-2">
           Already have an account? <a href="/login">Log in</a>
         </p>

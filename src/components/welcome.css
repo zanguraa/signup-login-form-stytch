@@ -1,9 +1,15 @@
 .container {
   display: flex;
-  flex-direction: column;
   position: relative;
 }
 
 .welcome-btn {
   margin: 0;
+}
+
+.welcome-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 250px;
 }

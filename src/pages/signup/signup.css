@@ -28,7 +28,12 @@ input:focus {
   justify-content: space-between;
   align-items: center;
   min-height: 250px;
+}
 
+.sign-in {
+  position: absolute;
+  bottom: 0;
+  right: 35%;
 }
 
 @media screen and (min-width: 1000px) {
@@ -45,5 +50,10 @@ input:focus {
     margin-left: 100px;
     min-width: 400px;
     align-items: flex-start;
+  }
+  .sign-in {
+    position: absolute;
+    bottom: 0;
+    right: 50px;
   }
 }

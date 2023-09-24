@@ -5,6 +5,7 @@ import { Email, Lock } from "@mui/icons-material";
 import Login from "./pages/login/Login";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WelcomePage from "./components/WelcomePage";
+import RessetPassword from "./pages/resset/RessetPassword";
 
 function App() {
   return (
@@ -14,24 +15,8 @@ function App() {
           <Route path="/" element={<WelcomePage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/resset" element={<RessetPassword />} />
         </Routes>
-        {/* <div className="form-group">
-
-
-        {/* <div className="form-group">
-        <label htmlFor="email">
-          <Email />
-        </label>
-        <input id="email" type="email" placeholder="Your Email" />
-      </div>
-      <div className="form-group">
-        <label htmlFor="password">
-          <Lock />
-        </label>
-        <input type="password" placeholder="Your Password" />
-      </div> */}
-        {/* <Signup /> */}
-        {/* <Login /> */}
       </Router>
     </div>
   );

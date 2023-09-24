@@ -23,6 +23,13 @@ const WelcomePage = () => {
           <button className="welcome-btn btn btn-success">Log In</button>
         </Link>
       </div>
+      <div className="flex-col">
+        <Link to="/resset">
+          <button className="welcome-btn btn btn-success">
+            Resset Password
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

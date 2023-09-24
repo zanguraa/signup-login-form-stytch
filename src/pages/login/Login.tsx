@@ -1,13 +1,14 @@
 import React from "react";
-import "../signup/signup.css";
+// import "../signup/signup.css";
+import "./login.css";
 import signinImage from "../../assets/images/signin.jpg";
 import { Email, Lock } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className="container">
-      <div className="signup-form">
+    <div className="container container-login">
+      <div className="signup-form-login">
         <div className="form-group">
           <label htmlFor="email">
             <Email />
@@ -21,7 +22,7 @@ const Login = () => {
           <input type="password" placeholder="Your Password" />
         </div>
         <div
-          style={{ width: "150px" }}
+          style={{ width: "150px", marginLeft: "-150px" }}
           className="flex mt-2 align-items-start d-flex  justify-content-between"
         >
           <label htmlFor="checkbox">Remember me</label>
