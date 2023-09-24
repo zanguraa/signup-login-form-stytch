@@ -1,4 +1,5 @@
 import React from "react";
+import "./resset.css";
 
 const RessetPassword = () => {
   return (

@@ -19,7 +19,7 @@ const Login = () => {
           <label htmlFor="password">
             <Lock />
           </label>
-          <input type="password" placeholder="Your Password" />
+          <input type="password" id="password" placeholder="Your Password" />
         </div>
         <div
           style={{ width: "150px", marginLeft: "-150px" }}
@@ -29,6 +29,9 @@ const Login = () => {
           <input style={{ width: "20px" }} id="checkbox" type="checkbox" />
         </div>
         <button className="btn btn-success">Log in</button>
+        <Link to="/resset">
+          <p className="text-center mt-2">Forgot Password?</p>
+        </Link>
       </div>
       <div>
         <img src={signinImage} alt="signup" />

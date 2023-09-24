@@ -31,7 +31,7 @@ const Signup = () => {
           <label htmlFor="password">
             <LockOutlined />
           </label>
-          <input type="password" placeholder="Confirm Password" />
+          <input type="password" id="password" placeholder="Confirm Password" />
         </div>
         <button className="btn btn-success">Sign Up</button>
       </div>

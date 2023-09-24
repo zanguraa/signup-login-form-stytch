@@ -6,7 +6,7 @@ const WelcomePage = () => {
   return (
     <div className="container container-welcome">
       <h1>Welcome </h1>
-      <p className="fw-light">
+      <p className="fw-light welcome-text">
         You are viewing test page. The main purpose of this site is to connect
         the user to the main page, which is visible only after authentication.
         Authentication is done through <b>"Scatch"</b>.
