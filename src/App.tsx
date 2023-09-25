@@ -8,7 +8,6 @@ import RessetPassword from "./pages/resset/RessetPassword";
 import { StytchHeadlessClient } from "@stytch/vanilla-js/headless";
 import { StytchProvider } from "@stytch/react";
 import Congrats from "./pages/congrats/Congrats";
-import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const [name, setName] = useState<string>("");
@@ -35,14 +34,7 @@ function App() {
               element={<Login setIsAuthenticated={setIsAuthenticated} />}
             />
             <Route path="/resset/*" element={<RessetPassword />} />
-            <Route
-              path="/congrats"
-              element={
-                <PrivateRoute isAuthenticated={isAuthenticated}>
-                  <Congrats name={name} />
-                </PrivateRoute>
-              }
-            />
+            <Route path="/congrats" element={<Congrats name={name} />} />
           </Routes>
         </StytchProvider>
       </Router>
