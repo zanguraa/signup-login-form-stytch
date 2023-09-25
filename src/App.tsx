@@ -4,10 +4,10 @@ import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WelcomePage from "./components/WelcomePage";
-import RessetPassword from "./pages/resset/RessetPassword";
 import { StytchHeadlessClient } from "@stytch/vanilla-js/headless";
 import { StytchProvider } from "@stytch/react";
 import Congrats from "./pages/congrats/Congrats";
+import ResetPassword  from "./pages/resset/ResetPassword";
 
 function App() {
   const [name, setName] = useState<string>("");
@@ -33,7 +33,7 @@ function App() {
               path="/login"
               element={<Login setIsAuthenticated={setIsAuthenticated} />}
             />
-            <Route path="/resset/*" element={<RessetPassword />} />
+            <Route path="/resset/*" element={<ResetPassword />} />
             <Route path="/congrats" element={<Congrats name={name} />} />
           </Routes>
         </StytchProvider>

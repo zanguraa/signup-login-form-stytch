@@ -18,6 +18,12 @@ const Login = ({ setIsAuthenticated }: LoginProps) => {
   const stytchClient = useStytch();
   const navigate = useNavigate();
 
+  const resetByEmail = () => {
+    stytchClient.passwords.resetByEmailStart({
+      email: "zanguraa@gmail.com",
+    });
+  };
+
   const login = () => {
     stytchClient.passwords
       .authenticate({
@@ -75,9 +81,12 @@ const Login = ({ setIsAuthenticated }: LoginProps) => {
         <button className="btn btn-success" onClick={login}>
           Log in
         </button>
-        <Link to="/resset">
-          <p className="text-center mt-2">Forgot Password?</p>
-        </Link>
+        <button
+          className="btn btn-danger text-center mt-2"
+          onClick={resetByEmail}
+        >
+          Reset Password?
+        </button>
       </div>
       <div>
         <img src={signinImage} alt="signup" />
